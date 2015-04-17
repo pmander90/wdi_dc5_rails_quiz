@@ -1,1 +1,15 @@
+<% if @circus.errors.any? %>
+	<ul>
+		<% @circus.errors.full_messages.each do |err| %>
+			<li><%= err %></li>
+		<%end%>
+	</ul>
+<%end%>
 
+<%= form_for @circus do |f| %>
+	<%= f.label :name %>
+	<%= f.string :name %>
+	<%= f.label :image_url %>
+	<%= f.string :image_url %>
+	<%= f.submit %>
+<%end%>

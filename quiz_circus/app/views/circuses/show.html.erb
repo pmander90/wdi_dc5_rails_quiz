@@ -1,1 +1,11 @@
-
+<%= link_to "See All Circuses", circuses_path %>
+<br>
+<%= @circus.name %>
+	<ul>
+		<% @circus.entertainers.each do |ent| %>
+			<li><%= ent.name %></li>
+			<ul>
+				<li><%= "Specialty: #{ent.specialty}" %></li>
+			</ul>
+		<%end%>
+	</ul>
